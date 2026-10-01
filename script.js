@@ -22,7 +22,7 @@ dataInicio: "2026-10-04",
 tituloFinal: "Que venha um novo ciclo incrível!",
 mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecíveis.",
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
-musica: "musica/nossa-musica.mp3"
+musica: "musica/nossa-musica.mp3"};
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
 const mainContent = document.getElementById("main-content");
