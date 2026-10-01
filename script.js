@@ -75,6 +75,4 @@ const music =
 document.getElementById("background-music");
 
 const musicButton =
-document.getElementById("music
-
-                        
+document.getElementById("music                        
