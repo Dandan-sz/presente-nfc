@@ -1,18 +1,8 @@
-```javascript
 /* =========================================================
    CONFIGURAÇÃO DO PRESENTE
-   =========================================================
-
-   ALTERE SOMENTE ESTA PARTE PARA CRIAR
-   UM NOVO PRESENTE.
-
 ========================================================= */
 
 const CONFIG = {
-
-    /* -------------------------
-       INFORMAÇÕES PRINCIPAIS
-    -------------------------- */
 
     nomePessoa: "Meu amor",
 
@@ -21,15 +11,10 @@ const CONFIG = {
     mensagemInicial:
         "Algumas pessoas entram na nossa vida e fazem tudo ficar mais bonito.",
 
-
-    /* -------------------------
-       CARTA
-    -------------------------- */
-
     tituloCarta:
         "Uma carta para você",
 
-    carta: `
+    carta: [
         "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.",
         "",
         "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.",
@@ -41,49 +26,12 @@ const CONFIG = {
         "Eu escolheria você novamente.",
         "Todos os dias."
     ].join("\n"),
-    `,
 
     assinatura:
         "Com todo meu amor ❤️",
 
-
-    /* -------------------------
-       VÍDEO DO YOUTUBE
-    --------------------------
-
-       Coloque somente o ID do vídeo.
-
-       Exemplo:
-
-       URL normal:
-       https://www.youtube.com/watch?v=ABC123XYZ
-
-       ID:
-       ABC123XYZ
-
-    -------------------------- */
-
     youtubeVideoId:
         "dQw4w9WgXcQ",
-
-
-    /* -------------------------
-       FOTOS
-    --------------------------
-
-       Você pode usar:
-
-       1. Fotos dentro do GitHub:
-
-       "fotos/foto1.jpg"
-
-       ou
-
-       2. Fotos hospedadas na internet:
-
-       "https://site.com/foto.jpg"
-
-    -------------------------- */
 
     fotos: [
 
@@ -109,28 +57,8 @@ const CONFIG = {
 
     ],
 
-
-    /* -------------------------
-       CONTADOR
-    --------------------------
-
-       Formato:
-
-       ANO-MÊS-DIA
-
-       Exemplo:
-
-       2024-06-15
-
-    -------------------------- */
-
     dataInicio:
         "2024-06-15",
-
-
-    /* -------------------------
-       TEXTO FINAL
-    -------------------------- */
 
     tituloFinal:
         "Ainda temos muito para viver.",
@@ -140,23 +68,6 @@ const CONFIG = {
 
     assinaturaFinal:
         "Para sempre ❤️",
-
-
-    /* -------------------------
-       MÚSICA
-
-       IMPORTANTE:
-
-       Para o GitHub funcionar corretamente,
-       coloque o arquivo dentro da pasta:
-
-       musica/
-
-       Exemplo:
-
-       musica/nossa-musica.mp3
-
-    -------------------------- */
 
     musica:
         "musica/nossa-musica.mp3"
@@ -193,18 +104,9 @@ const musicIcon =
 
 function carregarConfiguracao() {
 
-    /*
-     * Título da tela inicial
-     */
-
     document.getElementById("opening-title")
         .textContent =
         CONFIG.nomePessoa;
-
-
-    /*
-     * Hero
-     */
 
     document.getElementById("hero-title")
         .textContent =
@@ -213,11 +115,6 @@ function carregarConfiguracao() {
     document.getElementById("hero-message")
         .textContent =
         CONFIG.mensagemInicial;
-
-
-    /*
-     * Carta
-     */
 
     document.getElementById("letter-title")
         .textContent =
@@ -232,25 +129,22 @@ function carregarConfiguracao() {
         CONFIG.assinatura;
 
 
-    /*
-     * Vídeo
-     */
+    /* VÍDEO */
 
     if (CONFIG.youtubeVideoId) {
 
         const video =
             document.getElementById("youtube-video");
 
-       video.src =
-    "https://www.youtube.com/embed/" +
-    CONFIG.youtubeVideoId +
-    "?rel=0";
+        video.src =
+            "https://www.youtube.com/embed/" +
+            CONFIG.youtubeVideoId +
+            "?rel=0";
+
     }
 
 
-    /*
-     * Texto final
-     */
+    /* TEXTO FINAL */
 
     document.getElementById("final-title")
         .textContent =
@@ -265,9 +159,7 @@ function carregarConfiguracao() {
         CONFIG.assinaturaFinal;
 
 
-    /*
-     * Música
-     */
+    /* MÚSICA */
 
     if (CONFIG.musica) {
 
@@ -277,9 +169,7 @@ function carregarConfiguracao() {
     }
 
 
-    /*
-     * Galeria
-     */
+    /* GALERIA */
 
     carregarGaleria();
 
@@ -297,9 +187,8 @@ function carregarGaleria() {
 
     gallery.innerHTML = "";
 
-
     CONFIG.fotos.forEach(
-        (foto, index) => {
+        function (foto, index) {
 
             const item =
                 document.createElement("div");
@@ -315,18 +204,14 @@ function carregarGaleria() {
                 foto.url;
 
             image.alt =
-                foto.alt || `Foto ${index + 1}`;
+                foto.alt ||
+                "Foto " + (index + 1);
 
             image.loading =
                 index === 0
                     ? "eager"
                     : "lazy";
 
-
-            /*
-             * Caso a imagem não exista,
-             * mostramos um espaço neutro.
-             */
 
             image.onerror =
                 function () {
@@ -351,7 +236,10 @@ function carregarGaleria() {
    ABRIR A SURPRESA
 ========================================================= */
 
-console.log("Botão encontrado:", openButton);
+console.log(
+    "Botão encontrado:",
+    openButton
+);
 
 openButton.addEventListener(
     "click",
@@ -365,21 +253,8 @@ openButton.addEventListener(
             "hidden"
         );
 
-
-        /*
-         * Tenta iniciar a música.
-         *
-         * Como o usuário acabou de clicar,
-         * o navegador normalmente permite
-         * o autoplay neste momento.
-         */
-
         iniciarMusica();
 
-
-        /*
-         * Cria alguns corações
-         */
 
         for (let i = 0; i < 8; i++) {
 
@@ -416,14 +291,6 @@ async function iniciarMusica() {
         atualizarBotaoMusica();
 
     } catch (error) {
-
-        /*
-         * Alguns navegadores podem bloquear
-         * a reprodução automática.
-
-         * Nesse caso, o usuário pode apertar
-         * o botão de música.
-         */
 
         musicaTocando = false;
 
@@ -519,7 +386,8 @@ function atualizarContador() {
 
     const inicio =
         new Date(
-            CONFIG.dataInicio + "T00:00:00"
+            CONFIG.dataInicio +
+            "T00:00:00"
         );
 
     const agora =
@@ -535,10 +403,6 @@ function atualizarContador() {
 
     }
 
-
-    /*
-     * Calcula anos completos.
-     */
 
     let anos =
         agora.getFullYear() -
@@ -560,44 +424,28 @@ function atualizarContador() {
     }
 
 
-    /*
-     * Data depois dos anos completos.
-     */
-
     const depoisDosAnos =
         new Date(
             inicio.getTime()
         );
 
     depoisDosAnos.setFullYear(
-        inicio.getFullYear() + anos
+        inicio.getFullYear() +
+        anos
     );
 
-
-    /*
-     * Calcula meses.
-     */
 
     let meses =
         agora.getMonth() -
         depoisDosAnos.getMonth();
-
-    let anoTemporario =
-        agora.getFullYear();
 
 
     if (meses < 0) {
 
         meses += 12;
 
-        anoTemporario--;
-
     }
 
-
-    /*
-     * Data depois de anos + meses.
-     */
 
     const depoisDosMeses =
         new Date(
@@ -605,7 +453,8 @@ function atualizarContador() {
         );
 
     depoisDosMeses.setMonth(
-        depoisDosMeses.getMonth() + meses
+        depoisDosMeses.getMonth() +
+        meses
     );
 
 
@@ -614,15 +463,12 @@ function atualizarContador() {
         meses--;
 
         depoisDosMeses.setMonth(
-            depoisDosMeses.getMonth() - 1
+            depoisDosMeses.getMonth() -
+            1
         );
 
     }
 
-
-    /*
-     * Diferença em dias.
-     */
 
     const diferenca =
         agora -
@@ -646,10 +492,6 @@ function atualizarContador() {
         );
 
 
-    /*
-     * Atualiza a página.
-     */
-
     document.getElementById("years")
         .textContent =
         anos;
@@ -669,16 +511,8 @@ function atualizarContador() {
 }
 
 
-/*
- * Atualiza imediatamente.
- */
-
 atualizarContador();
 
-
-/*
- * Atualiza a cada minuto.
- */
 
 setInterval(
     atualizarContador,
@@ -709,41 +543,29 @@ function criarCoracao() {
             : "♡";
 
 
-    /*
-     * Posição horizontal aleatória.
-     */
-
     heart.style.left =
-        Math.random() * 100 + "%";
+        Math.random() * 100 +
+        "%";
 
-
-    /*
-     * Tamanho aleatório.
-     */
 
     heart.style.fontSize =
-        (10 + Math.random() * 18) + "px";
+        (10 + Math.random() * 18) +
+        "px";
 
-
-    /*
-     * Duração aleatória.
-     */
 
     const duration =
         7 + Math.random() * 8;
 
+
     heart.style.animationDuration =
-        duration + "s";
+        duration +
+        "s";
 
 
     container.appendChild(
         heart
     );
 
-
-    /*
-     * Remove depois da animação.
-     */
 
     setTimeout(
         function () {
@@ -756,10 +578,6 @@ function criarCoracao() {
 
 }
 
-
-/*
- * Cria corações periodicamente.
- */
 
 setInterval(
     function () {
@@ -776,4 +594,3 @@ setInterval(
 ========================================================= */
 
 carregarConfiguracao();
-```
