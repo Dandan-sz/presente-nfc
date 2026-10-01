@@ -87,7 +87,7 @@ music.play()
     .then(function() {
         musicaTocando = true;
         atualizarBotaoMusica();
-    .catch(function() {
+    catch(function() {
         musicaTocando = false;
         atualizarBotaoMusica();
 musicButton.addEventListener("click", function() {
