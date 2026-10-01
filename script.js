@@ -32,7 +32,7 @@ document.getElementById("letter-title").textContent = CONFIG.tituloCarta;
 document.getElementById("letter-text").textContent = CONFIG.carta;
 document.getElementById("signature").textContent = CONFIG.assinatura;
 
-"
+```
 if (CONFIG.youtubeVideoId) {
     const video = document.getElementById("youtube-video");
     video.src = "https://www.youtube.com/embed/" + CONFIG.youtubeVideoId + "?rel=0";
