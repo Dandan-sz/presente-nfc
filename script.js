@@ -4,7 +4,6 @@ titulo: "Nossa história",
 mensagemInicial: "Algumas pessoas entram na nossa vida e fazem tudo ficar mais bonito.",
 tituloCarta: "Uma carta para você",
 
-```
 carta:
     "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
     "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
@@ -29,7 +28,6 @@ mensagemFinal: "Obrigado por fazer parte da minha história.",
 assinaturaFinal: "Para sempre ❤️",
 
 musica: "musica/nossa-musica.mp3"
-```
 
 };
 
@@ -43,7 +41,6 @@ const musicIcon = document.getElementById("music-icon");
 
 function carregarConfiguracao() {
 
-```
 document.getElementById("opening-title").textContent =
     CONFIG.nomePessoa;
 
@@ -93,13 +90,11 @@ carregarFoto(CONFIG.foto1, "Nosso primeiro momento");
 carregarFoto(CONFIG.foto2, "Uma lembrança especial");
 carregarFoto(CONFIG.foto3, "Mais um momento nosso");
 carregarFoto(CONFIG.foto4, "Uma memória inesquecível");
-```
 
 }
 
 function carregarFoto(endereco, descricao) {
 
-```
 const gallery = document.getElementById("gallery");
 
 const item = document.createElement("div");
@@ -120,13 +115,11 @@ image.onerror = function() {
 
 item.appendChild(image);
 gallery.appendChild(item);
-```
 
 }
 
 openButton.addEventListener("click", function() {
 
-```
 openingScreen.classList.add("closed");
 
 mainContent.classList.remove("hidden");
@@ -152,7 +145,6 @@ function coracoesIniciais() {
 
 
 coracoesIniciais();
-```
 
 });
 
@@ -160,7 +152,6 @@ let musicaTocando = false;
 
 function iniciarMusica() {
 
-```
 if (!CONFIG.musica) {
     return;
 }
@@ -181,13 +172,11 @@ music.play()
         atualizarBotaoMusica();
 
     });
-```
 
 }
 
 musicButton.addEventListener("click", function() {
 
-```
 if (musicaTocando) {
 
     music.pause();
@@ -213,13 +202,11 @@ music.play()
         alert("Não foi possível iniciar a música.");
 
     });
-```
 
 });
 
 function atualizarBotaoMusica() {
 
-```
 if (musicaTocando) {
 
     musicIcon.textContent = "♫";
@@ -232,13 +219,11 @@ if (musicaTocando) {
 
     musicButton.classList.remove("playing");
 }
-```
 
 }
 
 function atualizarContador() {
 
-```
 const inicio =
     new Date(CONFIG.dataInicio + "T00:00:00");
 
@@ -331,7 +316,6 @@ document.getElementById("years").textContent = anos;
 document.getElementById("months").textContent = meses;
 document.getElementById("days").textContent = dias;
 document.getElementById("hours").textContent = horas;
-```
 
 }
 
@@ -344,7 +328,6 @@ atualizarContador,
 
 function criarCoracao() {
 
-```
 const container =
     document.getElementById("hearts-container");
 
@@ -385,15 +368,12 @@ setTimeout(function() {
     heart.remove();
 
 }, duration * 1000);
-```
 
 }
 
 setInterval(function() {
 
-```
 criarCoracao();
-```
 
 }, 1800);
 
