@@ -6,7 +6,6 @@ tituloCarta: "Uma carta para você",
 carta: "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\nObrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\nTalvez essas palavras nunca sejam suficientes para explicar o quanto você significa para mim.\n\nMas existe uma coisa que eu quero que você nunca esqueça:\n\nEu escolheria você novamente. Todos os dias.",
 assinatura: "Com todo meu amor",
 youtubeVideoId: "dQw4w9WgXcQ",
-```
 foto1: "fotos/fotoa1.jfif",
 foto2: "fotos/fotoa2.jfif",
 foto3: "fotos/fotoa3.jfif",
@@ -19,7 +18,6 @@ foto9: "fotos/fotoa9.jfif",
 foto10: "fotos/fotoa10.jfif",
 foto11: "fotos/fotoa11.jfif",
 foto12: "fotos/fotoa12.jfif",
-```
 
 dataInicio: "2024-06-15",
 tituloFinal: "Ainda temos muito para viver.",
@@ -55,7 +53,6 @@ if (CONFIG.musica) {
     music.src = CONFIG.musica;
 }
 
-```
 carregarFoto(CONFIG.foto1, "Nosso primeiro momento");
 carregarFoto(CONFIG.foto2, "Uma lembrança especial");
 carregarFoto(CONFIG.foto3, "Mais um momento nosso");
@@ -68,7 +65,6 @@ carregarFoto(CONFIG.foto9, "Uma lembrança para guardar");
 carregarFoto(CONFIG.foto10, "Mais uma história nossa");
 carregarFoto(CONFIG.foto11, "Um momento inesquecível");
 carregarFoto(CONFIG.foto12, "Para guardar para sempre");
-```
 
 }
 
