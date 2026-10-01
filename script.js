@@ -4,7 +4,7 @@ titulo: "Nossa história",
 mensagemInicial: "Algumas pessoas entram na nossa vida e fazem tudo ficar mais bonito.",
 tituloCarta: "Uma carta para você",
 
-```
+-
 carta:
     "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
     "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
@@ -29,7 +29,7 @@ mensagemFinal: "Obrigado por fazer parte da minha história.",
 assinaturaFinal: "Para sempre ❤️",
 
 musica: "musica/nossa-musica.mp3"
-```
+-
 
 };
 
@@ -49,7 +49,7 @@ document.getElementById("letter-title").textContent = CONFIG.tituloCarta;
 document.getElementById("letter-text").textContent = CONFIG.carta;
 document.getElementById("signature").textContent = CONFIG.assinatura;
 
-```
+-
 if (CONFIG.youtubeVideoId) {
     const video = document.getElementById("youtube-video");
 
@@ -71,14 +71,14 @@ carregarFoto(CONFIG.foto1, "Nosso primeiro momento");
 carregarFoto(CONFIG.foto2, "Uma lembrança especial");
 carregarFoto(CONFIG.foto3, "Mais um momento nosso");
 carregarFoto(CONFIG.foto4, "Uma memória inesquecível");
-```
+-
 
 }
 
 function carregarFoto(endereco, descricao) {
 const gallery = document.getElementById("gallery");
 
-```
+-
 const item = document.createElement("div");
 item.className = "gallery-item";
 
@@ -92,7 +92,7 @@ image.onerror = function() {
 
 item.appendChild(image);
 gallery.appendChild(item);
-```
+-
 
 }
 
@@ -100,7 +100,7 @@ openButton.addEventListener("click", function() {
 openingScreen.classList.add("closed");
 mainContent.classList.remove("hidden");
 
-```
+-
 iniciarMusica();
 
 let contador = 0;
@@ -117,7 +117,7 @@ function coracoesIniciais() {
 }
 
 coracoesIniciais();
-```
+-
 
 });
 
@@ -128,7 +128,7 @@ if (!CONFIG.musica) {
 return;
 }
 
-```
+-
 music.play()
     .then(function() {
         musicaTocando = true;
@@ -138,7 +138,7 @@ music.play()
         musicaTocando = false;
         atualizarBotaoMusica();
     });
-```
+-
 
 }
 
@@ -150,7 +150,7 @@ atualizarBotaoMusica();
 return;
 }
 
-```
+-
 music.play()
     .then(function() {
         musicaTocando = true;
@@ -159,7 +159,7 @@ music.play()
     .catch(function() {
         alert("Não foi possível iniciar a música.");
     });
-```
+-
 
 });
 
@@ -177,7 +177,7 @@ function atualizarContador() {
 const inicio =
 new Date(CONFIG.dataInicio + "T00:00:00");
 
-```
+-
 const agora = new Date();
 
 if (isNaN(inicio.getTime())) {
@@ -251,7 +251,7 @@ document.getElementById("years").textContent = anos;
 document.getElementById("months").textContent = meses;
 document.getElementById("days").textContent = dias;
 document.getElementById("hours").textContent = horas;
-```
+-
 
 }
 
@@ -266,7 +266,7 @@ function criarCoracao() {
 const container =
 document.getElementById("hearts-container");
 
-```
+-
 const heart =
     document.createElement("span");
 
@@ -293,7 +293,7 @@ container.appendChild(heart);
 setTimeout(function() {
     heart.remove();
 }, duration * 1000);
-```
+-
 
 }
 
