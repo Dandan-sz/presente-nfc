@@ -28,29 +28,17 @@ const CONFIG = {
     youtubeVideoId:
         "dQw4w9WgXcQ",
 
-    fotos: [
+    foto1:
+        "fotos/fotoa1.jpg",
 
-        {
-            url: "fotos/fotoa1.jpg",
-            alt: "Nosso primeiro momento"
-        },
+    foto2:
+        "fotos/fotoa2.jpg",
 
-        {
-            url: "fotos/fotoa2.jpg",
-            alt: "Uma lembrança especial"
-        },
+    foto3:
+        "fotos/fotoa3.jpg",
 
-        {
-            url: "fotos/fotoa3.jpg",
-            alt: "Mais um momento nosso"
-        },
-
-        {
-            url: "fotos/fotoa4.jpg",
-            alt: "Uma memória inesquecível"
-        }
-
-    ],
+    foto4:
+        "fotos/fotoa4.jpg",
 
     dataInicio:
         "2024-06-15",
@@ -94,38 +82,27 @@ const musicIcon =
 
 
 /* =========================================================
-   PREENCHER INFORMAÇÕES
+   CONFIGURAÇÃO DO TEXTO
 ========================================================= */
 
 function carregarConfiguracao() {
 
-    document.getElementById("opening-title")
-        .textContent =
+    document.getElementById("opening-title").textContent =
         CONFIG.nomePessoa;
 
-
-    document.getElementById("hero-title")
-        .textContent =
+    document.getElementById("hero-title").textContent =
         CONFIG.titulo;
 
-
-    document.getElementById("hero-message")
-        .textContent =
+    document.getElementById("hero-message").textContent =
         CONFIG.mensagemInicial;
 
-
-    document.getElementById("letter-title")
-        .textContent =
+    document.getElementById("letter-title").textContent =
         CONFIG.tituloCarta;
 
-
-    document.getElementById("letter-text")
-        .textContent =
+    document.getElementById("letter-text").textContent =
         CONFIG.carta.trim();
 
-
-    document.getElementById("signature")
-        .textContent =
+    document.getElementById("signature").textContent =
         CONFIG.assinatura;
 
 
@@ -142,7 +119,6 @@ function carregarConfiguracao() {
             "https://www.youtube.com/embed/" +
             CONFIG.youtubeVideoId +
             "?rel=0";
-
     }
 
 
@@ -150,18 +126,13 @@ function carregarConfiguracao() {
        TEXTO FINAL
     ===================================================== */
 
-    document.getElementById("final-title")
-        .textContent =
+    document.getElementById("final-title").textContent =
         CONFIG.tituloFinal;
 
-
-    document.getElementById("final-message")
-        .textContent =
+    document.getElementById("final-message").textContent =
         CONFIG.mensagemFinal;
 
-
-    document.getElementById("final-signature")
-        .textContent =
+    document.getElementById("final-signature").textContent =
         CONFIG.assinaturaFinal;
 
 
@@ -173,75 +144,85 @@ function carregarConfiguracao() {
 
         music.src =
             CONFIG.musica;
-
     }
 
 
     /* =====================================================
-       GALERIA
+       FOTOS
     ===================================================== */
 
-    carregarGaleria();
+    carregarFoto(
+        CONFIG.foto1,
+        "Nosso primeiro momento",
+        1
+    );
 
+    carregarFoto(
+        CONFIG.foto2,
+        "Uma lembrança especial",
+        2
+    );
+
+    carregarFoto(
+        CONFIG.foto3,
+        "Mais um momento nosso",
+        3
+    );
+
+    carregarFoto(
+        CONFIG.foto4,
+        "Uma memória inesquecível",
+        4
+    );
 }
 
 
 /* =========================================================
-   GALERIA
+   CARREGAR FOTOS
 ========================================================= */
 
-function carregarGaleria() {
+function carregarFoto(
+    endereco,
+    descricao,
+    numero
+) {
 
     const gallery =
         document.getElementById("gallery");
 
-    gallery.innerHTML = "";
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "gallery-item";
 
 
-    CONFIG.fotos.forEach(
-        function (foto, index) {
+    const image =
+        document.createElement("img");
 
-            const item =
-                document.createElement("div");
+    image.src =
+        endereco;
 
-            item.className =
-                "gallery-item";
+    image.alt =
+        descricao;
 
-
-            const image =
-                document.createElement("img");
-
-            image.src =
-                foto.url;
+    image.loading =
+        numero === 1
+            ? "eager"
+            : "lazy";
 
 
-            image.alt =
-                foto.alt ||
-                "Foto " + (index + 1);
+    image.onerror =
+        function () {
+
+            item.style.display =
+                "none";
+        };
 
 
-            image.loading =
-                index === 0
-                    ? "eager"
-                    : "lazy";
+    item.appendChild(image);
 
-
-            image.onerror =
-                function () {
-
-                    item.style.display =
-                        "none";
-
-                };
-
-
-            item.appendChild(image);
-
-            gallery.appendChild(item);
-
-        }
-    );
-
+    gallery.appendChild(item);
 }
 
 
@@ -263,23 +244,34 @@ openButton.addEventListener(
             "closed"
         );
 
-
         mainContent.classList.remove(
             "hidden"
         );
 
-
         iniciarMusica();
 
 
-        for (let i = 0; i < 8; i++) {
+        let contadorCoracoes = 0;
+
+
+        function criarCoracoesIniciais() {
+
+            if (contadorCoracoes >= 8) {
+                return;
+            }
+
+            criarCoracao();
+
+            contadorCoracoes++;
 
             setTimeout(
-                criarCoracao,
-                i * 250
+                criarCoracoesIniciais,
+                250
             );
-
         }
+
+
+        criarCoracoesIniciais();
 
     }
 );
@@ -292,31 +284,30 @@ openButton.addEventListener(
 let musicaTocando = false;
 
 
-async function iniciarMusica() {
+function iniciarMusica() {
 
     if (!CONFIG.musica) {
-
         return;
-
     }
 
 
-    try {
+    music.play()
+        .then(
+            function () {
 
-        await music.play();
+                musicaTocando = true;
 
-        musicaTocando = true;
+                atualizarBotaoMusica();
+            }
+        )
+        .catch(
+            function () {
 
-        atualizarBotaoMusica();
+                musicaTocando = false;
 
-    } catch (error) {
-
-        musicaTocando = false;
-
-        atualizarBotaoMusica();
-
-    }
-
+                atualizarBotaoMusica();
+            }
+        );
 }
 
 
@@ -331,7 +322,6 @@ musicButton.addEventListener(
             );
 
             return;
-
         }
 
 
@@ -341,34 +331,29 @@ musicButton.addEventListener(
 
             musicaTocando = false;
 
-        } else {
+            atualizarBotaoMusica();
 
-            music.play()
-                .then(
-                    function () {
-
-                        musicaTocando =
-                            true;
-
-                        atualizarBotaoMusica();
-
-                    }
-                )
-                .catch(
-                    function () {
-
-                        alert(
-                            "Não foi possível iniciar a música."
-                        );
-
-                    }
-                );
-
+            return;
         }
 
 
-        atualizarBotaoMusica();
+        music.play()
+            .then(
+                function () {
 
+                    musicaTocando = true;
+
+                    atualizarBotaoMusica();
+                }
+            )
+            .catch(
+                function () {
+
+                    alert(
+                        "Não foi possível iniciar a música."
+                    );
+                }
+            );
     }
 );
 
@@ -380,7 +365,6 @@ function atualizarBotaoMusica() {
         musicIcon.textContent =
             "♫";
 
-
         musicButton.classList.add(
             "playing"
         );
@@ -390,13 +374,10 @@ function atualizarBotaoMusica() {
         musicIcon.textContent =
             "♪";
 
-
         musicButton.classList.remove(
             "playing"
         );
-
     }
-
 }
 
 
@@ -412,7 +393,6 @@ function atualizarContador() {
             "T00:00:00"
         );
 
-
     const agora =
         new Date();
 
@@ -423,7 +403,6 @@ function atualizarContador() {
     ) {
 
         return;
-
     }
 
 
@@ -443,7 +422,6 @@ function atualizarContador() {
     if (aniversario > agora) {
 
         anos--;
-
     }
 
 
@@ -467,7 +445,6 @@ function atualizarContador() {
     if (meses < 0) {
 
         meses += 12;
-
     }
 
 
@@ -491,7 +468,6 @@ function atualizarContador() {
             depoisDosMeses.getMonth() -
             1
         );
-
     }
 
 
@@ -517,25 +493,17 @@ function atualizarContador() {
         );
 
 
-    document.getElementById("years")
-        .textContent =
+    document.getElementById("years").textContent =
         anos;
 
-
-    document.getElementById("months")
-        .textContent =
+    document.getElementById("months").textContent =
         meses;
 
-
-    document.getElementById("days")
-        .textContent =
+    document.getElementById("days").textContent =
         dias;
 
-
-    document.getElementById("hours")
-        .textContent =
+    document.getElementById("hours").textContent =
         horas;
-
 }
 
 
@@ -549,7 +517,7 @@ setInterval(
 
 
 /* =========================================================
-   CORAÇÕES FLUTUANTES
+   CORAÇÕES
 ========================================================= */
 
 function criarCoracao() {
@@ -568,10 +536,16 @@ function criarCoracao() {
         "floating-heart";
 
 
-    heart.textContent =
-        Math.random() > 0.5
-            ? "♥"
-            : "♡";
+    if (Math.random() > 0.5) {
+
+        heart.textContent =
+            "♥";
+
+    } else {
+
+        heart.textContent =
+            "♡";
+    }
 
 
     heart.style.left =
@@ -580,12 +554,14 @@ function criarCoracao() {
 
 
     heart.style.fontSize =
-        (10 + Math.random() * 18) +
+        10 +
+        Math.random() * 18 +
         "px";
 
 
     const duration =
-        7 + Math.random() * 8;
+        7 +
+        Math.random() * 8;
 
 
     heart.style.animationDuration =
@@ -606,7 +582,6 @@ function criarCoracao() {
         },
         duration * 1000
     );
-
 }
 
 
