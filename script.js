@@ -4,7 +4,6 @@ CONFIGURAÇÃO DO PRESENTE
 
 const CONFIG = {
 
-
 nomePessoa: "Meu amor",
 
 titulo: "Nossa história",
