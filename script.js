@@ -23,7 +23,6 @@ tituloFinal: "Que venha um novo ciclo incrível!",
 mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecíveis.",
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
 musica: "musica/nossa-musica.mp3"
-};
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
 const mainContent = document.getElementById("main-content");
@@ -40,13 +39,11 @@ document.getElementById("signature").textContent = CONFIG.assinatura;
 if (CONFIG.youtubeVideoId) {
     const video = document.getElementById("youtube-video");
     video.src = "https://www.youtube.com/embed/" + CONFIG.youtubeVideoId + "?rel=0";
-}
 document.getElementById("final-title").textContent = CONFIG.tituloFinal;
 document.getElementById("final-message").textContent = CONFIG.mensagemFinal;
 document.getElementById("final-signature").textContent = CONFIG.assinaturaFinal;
-if (CONFIG.musica) {
+if (CONFIG.musica) 
     music.src = CONFIG.musica;
-}
 carregarFoto(CONFIG.foto1, "Nosso primeiro momento");
 carregarFoto(CONFIG.foto2, "Uma lembrança especial");
 carregarFoto(CONFIG.foto3, "Mais um momento nosso");
@@ -59,7 +56,6 @@ carregarFoto(CONFIG.foto9, "Uma lembrança para guardar");
 carregarFoto(CONFIG.foto10, "Mais uma história nossa");
 carregarFoto(CONFIG.foto11, "Um momento inesquecível");
 carregarFoto(CONFIG.foto12, "Para guardar para sempre");
-}
 function carregarFoto(endereco, descricao) {
 const gallery = document.getElementById("gallery");
 const item = document.createElement("div");
@@ -69,10 +65,8 @@ image.src = endereco;
 image.alt = descricao;
 image.onerror = function() {
     item.style.display = "none";
-};
 item.appendChild(image);
 gallery.appendChild(item);
-}
 openButton.addEventListener("click", function() {
 openingScreen.classList.add("closed");
 mainContent.classList.remove("hidden");
@@ -81,44 +75,33 @@ let contador = 0;
 function coracoesIniciais() {
     if (contador >= 8) {
         return;
-    }
     criarCoracao();
     contador++;
     setTimeout(coracoesIniciais, 250);
-}
 coracoesIniciais();
-});
 let musicaTocando = false;
 function iniciarMusica() {
 if (!CONFIG.musica) {
 return;
-}
 music.play()
     .then(function() {
         musicaTocando = true;
         atualizarBotaoMusica();
-    })
     .catch(function() {
         musicaTocando = false;
         atualizarBotaoMusica();
-    });
-}
 musicButton.addEventListener("click", function() {
 if (musicaTocando) {
 music.pause();
 musicaTocando = false;
 atualizarBotaoMusica();
 return;
-}
 music.play()
     .then(function() {
         musicaTocando = true;
         atualizarBotaoMusica();
-    })
     .catch(function() {
         alert("Não foi possível iniciar a música.");
-    });
-});
 function atualizarBotaoMusica() {
 if (musicaTocando) {
 musicIcon.textContent = "♫";
@@ -126,55 +109,41 @@ musicButton.classList.add("playing");
 } else {
 musicIcon.textContent = "♪";
 musicButton.classList.remove("playing");
-}
-}
 function atualizarContador() {
 const inicio = new Date(CONFIG.dataInicio + "T00:00:00");
 const agora = new Date();
 if (isNaN(inicio.getTime())) {
     return;
-}
 let anos = agora.getFullYear() - inicio.getFullYear();
 let aniversario = new Date(
     agora.getFullYear(),
     inicio.getMonth(),
     inicio.getDate()
-);
 if (aniversario > agora) {
     anos--;
-}
 const depoisDosAnos = new Date(inicio.getTime());
 depoisDosAnos.setFullYear(
     inicio.getFullYear() + anos
-);
 let meses = agora.getMonth() - depoisDosAnos.getMonth();
 if (meses < 0) {
     meses += 12;
-}
 const depoisDosMeses = new Date(depoisDosAnos);
 depoisDosMeses.setMonth(
     depoisDosMeses.getMonth() + meses
-);
 if (depoisDosMeses > agora) {
     meses--;
     depoisDosMeses.setMonth(
         depoisDosMeses.getMonth() - 1
-    );
-}
 const diferenca = agora - depoisDosMeses;
 const dias = Math.floor(
     diferenca / (1000 * 60 * 60 * 24)
-);
 const horas = Math.floor(
-    (
         diferenca % (1000 * 60 * 60 * 24)
     ) / (1000 * 60 * 60)
-);
 document.getElementById("years").textContent = anos;
 document.getElementById("months").textContent = meses;
 document.getElementById("days").textContent = dias;
 document.getElementById("hours").textContent = horas;
-}
 atualizarContador();
 setInterval(atualizarContador, 60000);
 function criarCoracao() {
@@ -194,7 +163,6 @@ container.appendChild(heart);
 setTimeout(function() {
     heart.remove();
 }, duration * 1000);
-}
 setInterval(function() {
 criarCoracao();
 }, 1800);
