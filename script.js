@@ -4,9 +4,9 @@ titulo: "Feliz Aniversário!",
 mensagemInicial: "Hoje é um dia especial, porque é o dia de celebrar a vida de uma pessoa muito querida.",
 tituloCarta: "Uma mensagem para você",
 carta: "Flávia, hoje é o seu dia!\n\nQuero te desejar um aniversário cheio de alegria, momentos especiais, sorrisos sinceros e pessoas que fazem bem ao seu coração.\n\nQue esse novo ciclo venha acompanhado de sonhos realizados, novas conquistas, muita felicidade e muitos motivos para sorrir.\n\nQue você continue sendo essa pessoa especial e que nunca faltem motivos para comemorar cada momento da sua vida.\n\nEspero que você aproveite muito o seu dia e que ele seja tão especial quanto você merece.\n\nFeliz aniversário, Flávia! ❤️",
+
 assinatura: "Com muito carinho ❤️",
-musica: "musica/nossa-musica.mp3"
-    youtubeVideoId: "dQw4w9WgXcQ",
+youtubeVideoId: "dQw4w9WgXcQ",
 foto1: "fotos/fotoa1.jfif",
 foto2: "fotos/fotoa2.jfif",
 foto3: "fotos/fotoa3.jfif",
@@ -24,6 +24,8 @@ tituloFinal: "Que venha um novo ciclo incrível!",
 mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecíveis.",
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
 musica: "musica/nossa-musica.mp3"
+};
+
 };
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
