@@ -6,6 +6,28 @@ tituloCarta: "Uma mensagem para você",
 carta: "Flávia, hoje é o seu dia!\n\nQuero te desejar um aniversário cheio de alegria, momentos especiais, sorrisos sinceros e pessoas que fazem bem ao seu coração.\n\nQue esse novo ciclo venha acompanhado de sonhos realizados, novas conquistas, muita felicidade e muitos motivos para sorrir.\n\nQue você continue sendo essa pessoa especial e que nunca faltem motivos para comemorar cada momento da sua vida.\n\nEspero que você aproveite muito o seu dia e que ele seja tão especial quanto você merece.\n\nFeliz aniversário, Flávia! ❤️",
 assinatura: "Com muito carinho ❤️",
 musica: "musica/nossa-musica.mp3"
+    youtubeVideoId: "dQw4w9WgXcQ",
+
+foto1: "fotos/fotoa1.jfif",
+foto2: "fotos/fotoa2.jfif",
+foto3: "fotos/fotoa3.jfif",
+foto4: "fotos/fotoa4.jfif",
+foto5: "fotos/fotoa5.jfif",
+foto6: "fotos/fotoa6.jfif",
+foto7: "fotos/fotoa7.jfif",
+foto8: "fotos/fotoa8.jfif",
+foto9: "fotos/fotoa9.jfif",
+foto10: "fotos/fotoa10.jfif",
+foto11: "fotos/fotoa11.jfif",
+foto12: "fotos/fotoa12.jfif",
+
+dataInicio: "2024-06-15",
+
+tituloFinal: "Que venha um novo ciclo incrível!",
+mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecíveis.",
+assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
+
+musica: "musica/nossa-musica.mp3"
 };
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
