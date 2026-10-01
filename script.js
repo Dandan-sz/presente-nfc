@@ -3,8 +3,7 @@ nomePessoa: "Flávia",
 titulo: "Feliz Aniversário!",
 mensagemInicial: "Hoje é um dia especial, porque é o dia de celebrar a vida de uma pessoa muito querida.",
 tituloCarta: "Uma mensagem para você",
-carta: "Flávia, hoje é o seu dia!\n\nQuero te desejar um aniversário cheio de alegria, momentos especiais, sorrisos sinceros e pessoas que fazem bem ao seu coração.\n\nQue esse novo ciclo venha acompanhado de sonhos realizados, novas conquistas, muita felicidade e muitos motivos para sorrir.\n\nQue você continue sendo essa pessoa especial e que nunca faltem motivos para comemorar cada momento da sua vida.\n\nEspero que você aproveite muito o seu dia e que ele seja tão especial quanto você merece.\n\nFeliz aniversário, Flávia! ❤️",
-
+carta:"Flávia, hoje é o seu dia!\n\nQuero te desejar um aniversário cheio de alegria, momentos especiais, sorrisos sinceros e pessoas que fazem bem ao seu coração.\n\nQue esse novo ciclo venha acompanhado de sonhos realizados, novas conquistas, muita felicidade e muitos motivos para sorrir.\n\nQue você continue sendo essa pessoa especial e que nunca faltem motivos para comemorar cada momento da sua vida.\n\nEspero que você aproveite muito o seu dia e que ele seja tão especial quanto você merece.\n\nFeliz aniversário, Flávia! ❤️",
 assinatura: "Com muito carinho ❤️",
 youtubeVideoId: "dQw4w9WgXcQ",
 foto1: "fotos/fotoa1.jfif",
@@ -25,7 +24,6 @@ mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecív
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
 musica: "musica/nossa-musica.mp3"
 };
-
 };
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
@@ -47,7 +45,6 @@ if (CONFIG.youtubeVideoId) {
 document.getElementById("final-title").textContent = CONFIG.tituloFinal;
 document.getElementById("final-message").textContent = CONFIG.mensagemFinal;
 document.getElementById("final-signature").textContent = CONFIG.assinaturaFinal;
-
 if (CONFIG.musica) {
     music.src = CONFIG.musica;
 }
@@ -138,14 +135,12 @@ const agora = new Date();
 if (isNaN(inicio.getTime())) {
     return;
 }
-
 let anos = agora.getFullYear() - inicio.getFullYear();
 let aniversario = new Date(
     agora.getFullYear(),
     inicio.getMonth(),
     inicio.getDate()
 );
-
 if (aniversario > agora) {
     anos--;
 }
