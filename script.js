@@ -55,10 +55,21 @@ if (CONFIG.musica) {
     music.src = CONFIG.musica;
 }
 
+```
 carregarFoto(CONFIG.foto1, "Nosso primeiro momento");
 carregarFoto(CONFIG.foto2, "Uma lembrança especial");
 carregarFoto(CONFIG.foto3, "Mais um momento nosso");
 carregarFoto(CONFIG.foto4, "Uma memória inesquecível");
+carregarFoto(CONFIG.foto5, "Mais uma lembrança nossa");
+carregarFoto(CONFIG.foto6, "Um momento especial");
+carregarFoto(CONFIG.foto7, "Uma memória linda");
+carregarFoto(CONFIG.foto8, "Outro momento nosso");
+carregarFoto(CONFIG.foto9, "Uma lembrança para guardar");
+carregarFoto(CONFIG.foto10, "Mais uma história nossa");
+carregarFoto(CONFIG.foto11, "Um momento inesquecível");
+carregarFoto(CONFIG.foto12, "Para guardar para sempre");
+```
+
 }
 
 function carregarFoto(endereco, descricao) {
