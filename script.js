@@ -4,7 +4,7 @@ titulo: "Nossa história",
 mensagemInicial: "Algumas pessoas entram na nossa vida e fazem tudo ficar mais bonito.",
 tituloCarta: "Uma carta para você",
 
- 
+s
 carta:
     "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
     "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
