@@ -157,7 +157,7 @@ function atualizarContador() {
 const inicio = new Date(CONFIG.dataInicio + "T00:00:00");
 const agora = new Date();
 
-"
+```
 if (isNaN(inicio.getTime())) {
     return;
 }
