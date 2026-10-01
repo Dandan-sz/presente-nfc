@@ -1,3 +1,4 @@
+```javascript
 /* =========================================================
    CONFIGURAÇÃO DO PRESENTE
 ========================================================= */
@@ -28,6 +29,7 @@ const CONFIG = {
     youtubeVideoId:
         "dQw4w9WgXcQ",
 
+    /* FOTOS */
     foto1:
         "fotos/fotoa1.jfif",
 
@@ -40,6 +42,7 @@ const CONFIG = {
     foto4:
         "fotos/fotoa4.jfif",
 
+    /* DATA DO RELACIONAMENTO */
     dataInicio:
         "2024-06-15",
 
@@ -52,6 +55,7 @@ const CONFIG = {
     assinaturaFinal:
         "Para sempre ❤️",
 
+    /* MÚSICA */
     musica:
         "musica/nossa-musica.mp3"
 
@@ -415,188 +419,4 @@ function atualizarContador() {
         new Date(
             agora.getFullYear(),
             inicio.getMonth(),
-            inicio.getDate()
-        );
-
-
-    if (aniversario > agora) {
-
-        anos--;
-    }
-
-
-    const depoisDosAnos =
-        new Date(
-            inicio.getTime()
-        );
-
-
-    depoisDosAnos.setFullYear(
-        inicio.getFullYear() +
-        anos
-    );
-
-
-    let meses =
-        agora.getMonth() -
-        depoisDosAnos.getMonth();
-
-
-    if (meses < 0) {
-
-        meses += 12;
-    }
-
-
-    const depoisDosMeses =
-        new Date(
-            depoisDosAnos
-        );
-
-
-    depoisDosMeses.setMonth(
-        depoisDosMeses.getMonth() +
-        meses
-    );
-
-
-    if (depoisDosMeses > agora) {
-
-        meses--;
-
-        depoisDosMeses.setMonth(
-            depoisDosMeses.getMonth() -
-            1
-        );
-    }
-
-
-    const diferenca =
-        agora -
-        depoisDosMeses;
-
-
-    const dias =
-        Math.floor(
-            diferenca /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const horas =
-        Math.floor(
-            (
-                diferenca %
-                (1000 * 60 * 60 * 24)
-            ) /
-            (1000 * 60 * 60)
-        );
-
-
-    document.getElementById("years").textContent =
-        anos;
-
-    document.getElementById("months").textContent =
-        meses;
-
-    document.getElementById("days").textContent =
-        dias;
-
-    document.getElementById("hours").textContent =
-        horas;
-}
-
-
-atualizarContador();
-
-
-setInterval(
-    atualizarContador,
-    60000
-);
-
-
-/* =========================================================
-   CORAÇÕES
-========================================================= */
-
-function criarCoracao() {
-
-    const container =
-        document.getElementById(
-            "hearts-container"
-        );
-
-
-    const heart =
-        document.createElement("span");
-
-
-    heart.className =
-        "floating-heart";
-
-
-    if (Math.random() > 0.5) {
-
-        heart.textContent =
-            "♥";
-
-    } else {
-
-        heart.textContent =
-            "♡";
-    }
-
-
-    heart.style.left =
-        Math.random() * 100 +
-        "%";
-
-
-    heart.style.fontSize =
-        10 +
-        Math.random() * 18 +
-        "px";
-
-
-    const duration =
-        7 +
-        Math.random() * 8;
-
-
-    heart.style.animationDuration =
-        duration +
-        "s";
-
-
-    container.appendChild(
-        heart
-    );
-
-
-    setTimeout(
-        function () {
-
-            heart.remove();
-
-        },
-        duration * 1000
-    );
-}
-
-
-setInterval(
-    function () {
-
-        criarCoracao();
-
-    },
-    1800
-);
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
-
-carregarConfiguracao();
+```
