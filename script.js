@@ -7,7 +7,6 @@ carta: "Flávia, hoje é o seu dia!\n\nQuero te desejar um aniversário cheio de
 assinatura: "Com muito carinho ❤️",
 musica: "musica/nossa-musica.mp3"
     youtubeVideoId: "dQw4w9WgXcQ",
-
 foto1: "fotos/fotoa1.jfif",
 foto2: "fotos/fotoa2.jfif",
 foto3: "fotos/fotoa3.jfif",
@@ -20,13 +19,10 @@ foto9: "fotos/fotoa9.jfif",
 foto10: "fotos/fotoa10.jfif",
 foto11: "fotos/fotoa11.jfif",
 foto12: "fotos/fotoa12.jfif",
-
-dataInicio: "2024-06-15",
-
+dataInicio: "2026-10-04",
 tituloFinal: "Que venha um novo ciclo incrível!",
 mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecíveis.",
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
-
 musica: "musica/nossa-musica.mp3"
 };
 const openingScreen = document.getElementById("opening-screen");
