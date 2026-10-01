@@ -24,7 +24,6 @@ mensagemFinal: "Que esse novo ano da sua vida seja cheio de momentos inesquecív
 assinaturaFinal: "Feliz aniversário, Flávia! 🎂❤️",
 musica: "musica/nossa-musica.mp3"
 };
-};
 const openingScreen = document.getElementById("opening-screen");
 const openButton = document.getElementById("open-button");
 const mainContent = document.getElementById("main-content");
