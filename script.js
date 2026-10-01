@@ -15,13 +15,12 @@ const CONFIG = {
         "Uma carta para você",
 
     carta:
-    "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
-    "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
-    "Talvez essas palavras nunca sejam suficientes para explicar o quanto você significa para mim.\n\n" +
-    "Mas existe uma coisa que eu quero que você nunca esqueça:\n\n" +
-    "Eu escolheria você novamente.\n" +
-    "Todos os dias.",
-    ].join("\n"),
+        "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
+        "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
+        "Talvez essas palavras nunca sejam suficientes para explicar o quanto você significa para mim.\n\n" +
+        "Mas existe uma coisa que eu quero que você nunca esqueça:\n\n" +
+        "Eu escolheria você novamente.\n" +
+        "Todos os dias.",
 
     assinatura:
         "Com todo meu amor ❤️",
@@ -32,22 +31,22 @@ const CONFIG = {
     fotos: [
 
         {
-            url: "fotos/foto1.jpg",
+            url: "fotos/fotoa1.jpg",
             alt: "Nosso primeiro momento"
         },
 
         {
-            url: "fotos/foto2.jpg",
+            url: "fotos/fotoa2.jpg",
             alt: "Uma lembrança especial"
         },
 
         {
-            url: "fotos/foto3.jpg",
+            url: "fotos/fotoa3.jpg",
             alt: "Mais um momento nosso"
         },
 
         {
-            url: "fotos/foto4.jpg",
+            url: "fotos/fotoa4.jpg",
             alt: "Uma memória inesquecível"
         }
 
@@ -104,28 +103,35 @@ function carregarConfiguracao() {
         .textContent =
         CONFIG.nomePessoa;
 
+
     document.getElementById("hero-title")
         .textContent =
         CONFIG.titulo;
+
 
     document.getElementById("hero-message")
         .textContent =
         CONFIG.mensagemInicial;
 
+
     document.getElementById("letter-title")
         .textContent =
         CONFIG.tituloCarta;
 
+
     document.getElementById("letter-text")
         .textContent =
         CONFIG.carta.trim();
+
 
     document.getElementById("signature")
         .textContent =
         CONFIG.assinatura;
 
 
-    /* VÍDEO */
+    /* =====================================================
+       VÍDEO
+    ===================================================== */
 
     if (CONFIG.youtubeVideoId) {
 
@@ -140,22 +146,28 @@ function carregarConfiguracao() {
     }
 
 
-    /* TEXTO FINAL */
+    /* =====================================================
+       TEXTO FINAL
+    ===================================================== */
 
     document.getElementById("final-title")
         .textContent =
         CONFIG.tituloFinal;
 
+
     document.getElementById("final-message")
         .textContent =
         CONFIG.mensagemFinal;
+
 
     document.getElementById("final-signature")
         .textContent =
         CONFIG.assinaturaFinal;
 
 
-    /* MÚSICA */
+    /* =====================================================
+       MÚSICA
+    ===================================================== */
 
     if (CONFIG.musica) {
 
@@ -165,7 +177,9 @@ function carregarConfiguracao() {
     }
 
 
-    /* GALERIA */
+    /* =====================================================
+       GALERIA
+    ===================================================== */
 
     carregarGaleria();
 
@@ -183,6 +197,7 @@ function carregarGaleria() {
 
     gallery.innerHTML = "";
 
+
     CONFIG.fotos.forEach(
         function (foto, index) {
 
@@ -199,9 +214,11 @@ function carregarGaleria() {
             image.src =
                 foto.url;
 
+
             image.alt =
                 foto.alt ||
                 "Foto " + (index + 1);
+
 
             image.loading =
                 index === 0
@@ -237,6 +254,7 @@ console.log(
     openButton
 );
 
+
 openButton.addEventListener(
     "click",
     function () {
@@ -245,9 +263,11 @@ openButton.addEventListener(
             "closed"
         );
 
+
         mainContent.classList.remove(
             "hidden"
         );
+
 
         iniciarMusica();
 
@@ -275,8 +295,11 @@ let musicaTocando = false;
 async function iniciarMusica() {
 
     if (!CONFIG.musica) {
+
         return;
+
     }
+
 
     try {
 
@@ -308,6 +331,7 @@ musicButton.addEventListener(
             );
 
             return;
+
         }
 
 
@@ -356,6 +380,7 @@ function atualizarBotaoMusica() {
         musicIcon.textContent =
             "♫";
 
+
         musicButton.classList.add(
             "playing"
         );
@@ -364,6 +389,7 @@ function atualizarBotaoMusica() {
 
         musicIcon.textContent =
             "♪";
+
 
         musicButton.classList.remove(
             "playing"
@@ -385,6 +411,7 @@ function atualizarContador() {
             CONFIG.dataInicio +
             "T00:00:00"
         );
+
 
     const agora =
         new Date();
@@ -425,6 +452,7 @@ function atualizarContador() {
             inicio.getTime()
         );
 
+
     depoisDosAnos.setFullYear(
         inicio.getFullYear() +
         anos
@@ -447,6 +475,7 @@ function atualizarContador() {
         new Date(
             depoisDosAnos
         );
+
 
     depoisDosMeses.setMonth(
         depoisDosMeses.getMonth() +
@@ -492,13 +521,16 @@ function atualizarContador() {
         .textContent =
         anos;
 
+
     document.getElementById("months")
         .textContent =
         meses;
 
+
     document.getElementById("days")
         .textContent =
         dias;
+
 
     document.getElementById("hours")
         .textContent =
@@ -527,11 +559,14 @@ function criarCoracao() {
             "hearts-container"
         );
 
+
     const heart =
         document.createElement("span");
 
+
     heart.className =
         "floating-heart";
+
 
     heart.textContent =
         Math.random() > 0.5
