@@ -40,6 +40,7 @@ const CONFIG = {
         "",
         "Eu escolheria você novamente.",
         "Todos os dias."
+    ].join("\n"),
     `,
 
     assinatura:
