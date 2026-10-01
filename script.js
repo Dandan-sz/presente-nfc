@@ -241,9 +241,10 @@ function carregarConfiguracao() {
         const video =
             document.getElementById("youtube-video");
 
-        video.src =
-            `https://www.youtube.com/embed/${CONFIG.youtubeVideoId}?rel=0`;
-
+       video.src =
+    "https://www.youtube.com/embed/" +
+    CONFIG.youtubeVideoId +
+    "?rel=0";
     }
 
 
