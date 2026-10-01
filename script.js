@@ -4,7 +4,7 @@ CONFIGURAÇÃO DO PRESENTE
 
 const CONFIG = {
 
-```
+
 nomePessoa: "Meu amor",
 
 titulo: "Nossa história",
@@ -55,7 +55,7 @@ assinaturaFinal:
 
 musica:
     "musica/nossa-musica.mp3"
-```
+
 
 };
 
