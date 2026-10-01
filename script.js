@@ -14,17 +14,13 @@ const CONFIG = {
     tituloCarta:
         "Uma carta para você",
 
-    carta: [
-        "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.",
-        "",
-        "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.",
-        "",
-        "Talvez essas palavras nunca sejam suficientes para explicar o quanto você significa para mim.",
-        "",
-        "Mas existe uma coisa que eu quero que você nunca esqueça:",
-        "",
-        "Eu escolheria você novamente.",
-        "Todos os dias."
+    carta:
+    "Se eu pudesse guardar alguns momentos para sempre, escolheria todos aqueles que vivi ao seu lado.\n\n" +
+    "Obrigado por cada sorriso, cada abraço, cada conversa e cada pequeno momento que fez nossa história ser tão especial.\n\n" +
+    "Talvez essas palavras nunca sejam suficientes para explicar o quanto você significa para mim.\n\n" +
+    "Mas existe uma coisa que eu quero que você nunca esqueça:\n\n" +
+    "Eu escolheria você novamente.\n" +
+    "Todos os dias.",
     ].join("\n"),
 
     assinatura:
