@@ -356,6 +356,8 @@ function carregarGaleria() {
    ABRIR A SURPRESA
 ========================================================= */
 
+console.log("Botão encontrado:", openButton);
+
 openButton.addEventListener(
     "click",
     function () {
