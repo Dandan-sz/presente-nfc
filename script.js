@@ -29,16 +29,16 @@ const CONFIG = {
         "dQw4w9WgXcQ",
 
     foto1:
-        "fotos/fotoa1.jpg",
+        "fotos/fotoa1.jfif",
 
     foto2:
-        "fotos/fotoa2.jpg",
+        "fotos/fotoa2.jfif",
 
     foto3:
-        "fotos/fotoa3.jpg",
+        "fotos/fotoa3.jfif",
 
     foto4:
-        "fotos/fotoa4.jpg",
+        "fotos/fotoa4.jfif",
 
     dataInicio:
         "2024-06-15",
