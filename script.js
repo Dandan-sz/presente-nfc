@@ -398,6 +398,3 @@ criarCoracao();
 }, 1800);
 
 carregarConfiguracao();
-
-```
-```
