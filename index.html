@@ -1,0 +1,322 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0d12">
+    <meta name="description" content="Uma página especial feita com carinho.">
+
+    <title>Uma surpresa para você ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         FUNDO / CORAÇÕES
+    ========================== -->
+
+    <div id="hearts-container"></div>
+
+    <!-- =========================
+         TELA DE ABERTURA
+    ========================== -->
+
+    <section id="opening-screen" class="opening-screen">
+
+        <div class="opening-content">
+
+            <div class="opening-heart">♥</div>
+
+            <p class="opening-small">
+                Você recebeu uma surpresa
+            </p>
+
+            <h1 id="opening-title">
+                Para você
+            </h1>
+
+            <p class="opening-subtitle">
+                Uma pequena lembrança<br>
+                de alguém que te ama.
+            </p>
+
+            <button id="open-button" class="main-button">
+                <span>Abrir minha surpresa</span>
+                <span class="button-heart">♥</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main id="main-content" class="main-content hidden">
+
+        <!-- HERO -->
+
+        <section class="hero section">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    Com amor, para você
+                </span>
+
+                <h1 id="hero-title">
+                    Nossa história
+                </h1>
+
+                <div class="divider">
+                    <span></span>
+                    ♥
+                    <span></span>
+                </div>
+
+                <p id="hero-message" class="hero-message">
+                    Algumas histórias merecem ser lembradas para sempre.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VÍDEO -->
+
+        <section class="section video-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <h2>
+                    Um momento para lembrar
+                </h2>
+
+                <p>
+                    Aperte o play e reviva essa lembrança.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <iframe
+                        id="youtube-video"
+                        src=""
+                        title="Vídeo especial"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DECLARAÇÃO -->
+
+        <section class="section letter-section">
+
+            <div class="letter-card">
+
+                <div class="letter-decoration">
+                    ♥
+                </div>
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2 id="letter-title">
+                    Uma carta para você
+                </h2>
+
+                <div id="letter-text" class="letter-text">
+                    <!-- O texto será inserido pelo JavaScript -->
+                </div>
+
+                <div class="letter-signature">
+
+                    <span>
+                        Com todo meu amor,
+                    </span>
+
+                    <strong id="signature">
+                        Alguém especial ❤️
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALERIA -->
+
+        <section class="section gallery-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h2>
+                    Alguns dos nossos momentos
+                </h2>
+
+                <p>
+                    Porque algumas memórias merecem ficar para sempre.
+                </p>
+
+            </div>
+
+            <div id="gallery" class="gallery">
+                <!-- Fotos adicionadas pelo JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- CONTADOR -->
+
+        <section class="section counter-section">
+
+            <div class="counter-card">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <h2>
+                    Nosso tempo
+                </h2>
+
+                <p id="counter-intro">
+                    E que venham muitos outros momentos.
+                </p>
+
+                <div class="counter">
+
+                    <div class="counter-item">
+                        <strong id="years">0</strong>
+                        <span>anos</span>
+                    </div>
+
+                    <div class="counter-item">
+                        <strong id="months">0</strong>
+                        <span>meses</span>
+                    </div>
+
+                    <div class="counter-item">
+                        <strong id="days">0</strong>
+                        <span>dias</span>
+                    </div>
+
+                    <div class="counter-item">
+                        <strong id="hours">0</strong>
+                        <span>horas</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <div class="big-heart">
+                    ♥
+                </div>
+
+                <h2 id="final-title">
+                    Ainda temos muito para viver.
+                </h2>
+
+                <p id="final-message">
+                    Obrigado por fazer parte da minha história.
+                </p>
+
+                <div class="final-divider">
+                    ♥
+                </div>
+
+                <strong id="final-signature">
+                    Para sempre ❤️
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTROLE DA MÚSICA -->
+
+        <button
+            id="music-button"
+            class="music-button"
+            aria-label="Controlar música">
+
+            <span id="music-icon">
+                ♪
+            </span>
+
+        </button>
+
+
+        <!-- RODAPÉ -->
+
+        <footer>
+
+            <p>
+                Feito com ❤️ para uma pessoa especial.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================== -->
+
+    <audio
+        id="background-music"
+        loop
+        preload="auto">
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

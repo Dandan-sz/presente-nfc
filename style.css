@@ -1,0 +1,1016 @@
+```css
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0d12;
+    color: #f8f3f3;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 100, 140, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(190, 80, 120, 0.08),
+            transparent 30%
+        );
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+
+/* =========================================================
+   CORAÇÕES
+========================================================= */
+
+#hearts-container {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    color: rgba(255, 120, 150, 0.35);
+
+    font-size: 15px;
+
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   TELA DE ABERTURA
+========================================================= */
+
+.opening-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24131c 0%,
+            #120d12 50%,
+            #08080b 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.opening-screen.closed {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+.opening-content {
+
+    max-width: 600px;
+
+    animation: openingAppear 1.5s ease;
+}
+
+@keyframes openingAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.opening-heart {
+
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ff8ca8;
+
+    font-size: 42px;
+
+    background:
+        rgba(255, 100, 140, 0.08);
+
+    border:
+        1px solid rgba(255, 130, 160, 0.25);
+
+    box-shadow:
+        0 0 50px rgba(255, 100, 140, 0.15);
+
+    animation:
+        heartPulse 2s infinite;
+}
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.opening-small {
+
+    color: #c89ba9;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.opening-content h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(52px, 10vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.opening-subtitle {
+
+    color: #c9bdc1;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.main-button {
+
+    border: 1px solid rgba(255, 150, 175, 0.35);
+
+    background:
+        rgba(255, 120, 150, 0.10);
+
+    color: white;
+
+    padding: 17px 28px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.main-button:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255, 120, 150, 0.18);
+
+    box-shadow:
+        0 10px 40px rgba(255, 80, 120, 0.15);
+}
+
+.button-heart {
+
+    margin-left: 10px;
+
+    color: #ff91ac;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.main-content {
+
+    animation:
+        contentAppear 1s ease;
+}
+
+@keyframes contentAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.section {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        110px 25px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content {
+
+    max-width: 750px;
+}
+
+.eyebrow {
+
+    color: #e29aaa;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 10px;
+}
+
+.hero h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 12vw, 120px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin:
+        25px 0;
+}
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: #d77f94;
+
+    font-size: 14px;
+}
+
+.divider span {
+
+    width: 60px;
+
+    height: 1px;
+
+    background:
+        rgba(215, 127, 148, 0.35);
+}
+
+.hero-message {
+
+    max-width: 550px;
+
+    margin: 30px auto 0;
+
+    color: #bdb1b5;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   TÍTULOS DAS SEÇÕES
+========================================================= */
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-number {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d98699;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.section-heading h2,
+.letter-card h2,
+.counter-card h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+
+    color: #9e9398;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VÍDEO
+========================================================= */
+
+.video-section {
+
+    padding-top: 40px;
+}
+
+.video-wrapper {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 130, 160, 0.25),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    border-radius: 18px;
+}
+
+.video-container {
+
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    background: #050507;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.video-container iframe {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.letter-section {
+
+    max-width: 850px;
+}
+
+.letter-card {
+
+    position: relative;
+
+    padding:
+        70px 60px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.25);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.letter-decoration {
+
+    position: absolute;
+
+    top: -40px;
+    right: -20px;
+
+    font-size: 180px;
+
+    color: rgba(255, 120, 150, 0.025);
+
+    transform: rotate(15deg);
+}
+
+.letter-text {
+
+    position: relative;
+
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    color: #cfc3c7;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    white-space: pre-line;
+}
+
+.letter-signature {
+
+    position: relative;
+
+    margin-top: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.letter-signature span {
+
+    color: #94898e;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.letter-signature strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: #e2a1af;
+}
+
+
+/* =========================================================
+   GALERIA
+========================================================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.gallery-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #18171c;
+
+    min-height: 250px;
+}
+
+.gallery-item:first-child {
+
+    grid-column:
+        span 2;
+
+    min-height: 420px;
+}
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.gallery-item:hover img {
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+.counter-section {
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+.counter-card {
+
+    padding:
+        70px 30px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.counter-card > p {
+
+    color: #958b90;
+
+    margin-bottom: 45px;
+
+    font-size: 13px;
+}
+
+.counter {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.counter-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.counter-item strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(40px, 7vw, 65px);
+
+    font-weight: 500;
+
+    color: #e7a2b1;
+}
+
+.counter-item span {
+
+    color: #82777d;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-section {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,100,140,0.08),
+            transparent 55%
+        );
+}
+
+.final-content {
+
+    max-width: 650px;
+}
+
+.big-heart {
+
+    color: #e6849d;
+
+    font-size: 55px;
+
+    margin-bottom: 30px;
+
+    animation:
+        heartPulse 2s infinite;
+}
+
+.final-content h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 8vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.final-content p {
+
+    color: #a59a9f;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.final-divider {
+
+    margin: 35px 0;
+
+    color: #d98599;
+}
+
+.final-signature {
+
+    color: #e0a1af;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 500;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,140,165,0.3);
+
+    background:
+        rgba(20,18,22,0.85);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: #f1a1b2;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.music-button:hover {
+
+    transform:
+        scale(1.1);
+}
+
+.music-button.playing {
+
+    animation:
+        musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(255,100,140,0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(255,100,140,0.2);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        30px 20px 45px;
+
+    text-align: center;
+
+    color: #655d62;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+
+        padding:
+            80px 20px;
+    }
+
+    .opening-content h1 {
+
+        font-size: 60px;
+    }
+
+    .letter-card {
+
+        padding:
+            50px 25px;
+    }
+
+    .letter-text {
+
+        font-size: 19px;
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .gallery-item:first-child {
+
+        grid-column:
+            span 1;
+
+        min-height: 300px;
+    }
+
+    .gallery-item {
+
+        min-height: 300px;
+    }
+
+    .counter {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 35px 15px;
+    }
+
+    .hero {
+
+        min-height: 80vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+```
